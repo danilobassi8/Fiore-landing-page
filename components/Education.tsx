@@ -21,7 +21,7 @@ const StudyCard: React.FC<{
 
       {/* Content */}
       <div className="space-y-4 grow flex flex-col">
-        <h3 className="text-xl md:text-2xl elegant-font font-medium leading-tight">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-mono font-medium leading-tight">{title}</h3>
 
         <p className="text-xs md:text-sm font-medium text-gray-600">{institution}</p>
 
