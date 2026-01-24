@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+h1,
+h2,
+h3,
+.elegant-font {
+  font-family: 'Cormorant Garamond', serif;
+}
+.bg-blob {
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: -1;
+}
+.transition-gentle {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+::selection {
+  background: #ffdada;
+  color: #000;
+}
