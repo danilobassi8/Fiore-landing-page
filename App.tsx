@@ -1,11 +1,10 @@
-
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Contact from './components/Contact';
+import About from './components/views/About';
+import Experience from './components/views/Experience';
+import Education from './components/views/Education';
+import Contact from './components/views/Contact';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
