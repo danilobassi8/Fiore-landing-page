@@ -1,7 +1,8 @@
 import React from 'react';
+import ContactForm from './ContactForm';
 
 const CONSTANTS = {
-  email: 'hola@psicologafp.com',
+  email: 'danilobassi44@gmail.com',
   whatsapp: {
     number: '3468 411130',
     url: 'https://wa.me/5493468411130',
@@ -91,34 +92,8 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white p-10 md:p-16 rounded-[4rem] shadow-2xl shadow-black/5">
-            <form className="space-y-8">
-              <div className="relative">
-                <input
-                  type="text"
-                  className="w-full bg-transparent border-b border-gray-100 focus:border-[#FF8A8A] py-4 outline-none transition-all font-light text-lg"
-                  placeholder="Tu nombre"
-                />
-              </div>
-              <div className="relative">
-                <input
-                  type="email"
-                  className="w-full bg-transparent border-b border-gray-100 focus:border-[#FF8A8A] py-4 outline-none transition-all font-light text-lg"
-                  placeholder="Tu email"
-                />
-              </div>
-              <div className="relative">
-                <textarea
-                  rows={3}
-                  className="w-full bg-transparent border-b border-gray-100 focus:border-[#FF8A8A] py-4 outline-none transition-all font-light text-lg resize-none"
-                  placeholder="¿Cómo puedo ayudarte?"
-                ></textarea>
-              </div>
-              <button className="w-full bg-black text-white text-[11px] uppercase tracking-[0.3em] font-bold py-6 rounded-3xl hover:bg-[#FF8A8A] transition-all transform hover:-translate-y-1 active:scale-95 shadow-lg shadow-black/10">
-                Enviar Mensaje
-              </button>
-            </form>
-          </div>
+          {/* Formulario de contacto */}
+          <ContactForm />
         </div>
       </div>
     </section>
