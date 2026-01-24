@@ -2,7 +2,7 @@ import React from 'react';
 import ContactForm from '../ContactForm';
 
 const CONSTANTS = {
-  email: 'danilobassi44@gmail.com',
+  email: 'ps.fiorellabpedros@gmail.com',
   whatsapp: {
     number: '3468 411130',
     url: 'https://wa.me/5493468411130',
@@ -22,7 +22,10 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
           <div className="flex flex-col justify-start pt-10">
-            <h3 className="text-5xl md:text-7xl elegant-font mb-10">¿Hablamos?</h3>
+            <h3 className="text-5xl md:text-7xl elegant-font mb-4">¿Hablamos?</h3>
+            <p className="text-gray-500 font-light text-lg mb-10 leading-relaxed">
+              Podés solicitar turno tanto virtual como presencial
+            </p>
 
             <div className="space-y-10">
               <div className="flex items-start space-x-6">

@@ -1,37 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import {emailJsConfig} from '../configs/emailJS'
+
+
+
 
 const CONTACT_FORM_CONSTANTS = {
-  // Configuración de EmailJS
-  emailJS: {
-    serviceID: 'service_f3xcj6d',
-    templateID: 'template_58al65v',
-    publicKey: 'xM87yhQrapXsC_Afe',
-  },
-  // Configuración del formulario
-  form: {
-    placeholders: {
-      name: 'Tu nombre',
-      email: 'Tu email',
-      message: '¿Cómo puedo ayudarte?',
-    },
-    button: {
-      default: 'Enviar Mensaje',
-      sending: 'Enviando...',
-      success: '¡Mensaje Enviado!',
-      error: 'Error al enviar',
-      blocked: 'Ya enviaste un mensaje',
-    },
-    messages: {
-      success: '¡Gracias! Tu mensaje ha sido enviado correctamente.',
-      error: 'Hubo un error al enviar el mensaje. Por favor intenta de nuevo.',
-      blocked: 'Gracias por ponerte en contacto conmigo. Voy a comunicarme lo antes posible.',
-    },
-  },
-  // Configuración de rate limiting
+  // EmailJS config
+  emailJS: emailJsConfig,
+  // Rate limiting config
   rateLimiting: {
     daysBetweenEmails: 7,
-    localStorageKey: 'lastEmailSentDate',
+    localStorageKey: 'fiorepedros.com_lastEmailSentDate',
   },
 };
 
@@ -95,11 +75,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
         CONTACT_FORM_CONSTANTS.emailJS.serviceID,
         CONTACT_FORM_CONSTANTS.emailJS.templateID,
         {
-          from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
+          time: (new Date()).toLocaleString()
         },
-        CONTACT_FORM_CONSTANTS.emailJS.publicKey
+        CONTACT_FORM_CONSTANTS.emailJS.publicKey,
       );
 
       // Guardar la fecha del último email enviado
@@ -109,78 +89,63 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
       setIsBlocked(true);
-
-      // Reset status after 5 seconds
-      setTimeout(() => setStatus('blocked'), 5000);
     } catch (error) {
       console.error('Error sending email:', error);
       setStatus('error');
 
-      // Reset status after 3 seconds
+      // Reset status after 3 seconds para que puedan intentar de nuevo
       setTimeout(() => setStatus('idle'), 3000);
     }
   };
 
-  const getButtonText = () => {
-    switch (status) {
-      case 'sending':
-        return CONTACT_FORM_CONSTANTS.form.button.sending;
-      case 'success':
-        return CONTACT_FORM_CONSTANTS.form.button.success;
-      case 'error':
-        return CONTACT_FORM_CONSTANTS.form.button.error;
-      case 'blocked':
-        return CONTACT_FORM_CONSTANTS.form.button.blocked;
-      default:
-        return CONTACT_FORM_CONSTANTS.form.button.default;
+  // Renderizar contenido según el estado
+  const renderContent = () => {
+    if (status === 'success') {
+      return (
+        <div className="text-center space-y-6">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+            <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <p className="font-light text-xl mt-2">Recibí tu mensaje!</p>
+          <p className="text-gray-600 font-light leading-relaxed">
+            Gracias por ponerte en contacto conmigo. <br />
+            Voy a intentar responderte lo antes posible!
+          </p>
+        </div>
+      );
     }
-  };
 
-  const getButtonStyles = () => {
-    const baseStyles = 'w-full text-[11px] uppercase tracking-[0.3em] font-bold py-6 rounded-3xl transition-all transform shadow-lg';
-
-    switch (status) {
-      case 'sending':
-        return `${baseStyles} bg-gray-400 text-white cursor-not-allowed`;
-      case 'success':
-        return `${baseStyles} bg-green-500 text-white`;
-      case 'error':
-        return `${baseStyles} bg-red-500 text-white`;
-      case 'blocked':
-        return `${baseStyles} bg-[#FF8A8A] text-white cursor-not-allowed`;
-      default:
-        return `${baseStyles} bg-black text-white hover:bg-[#FF8A8A] hover:-translate-y-1 active:scale-95 shadow-black/10`;
+    if (status === 'blocked') {
+      return (
+        <div className="text-center space-y-6">
+          <div className="w-16 h-16 bg-[#FF8A8A]/10 rounded-full flex items-center justify-center mx-auto">
+            <svg className="w-8 h-8 text-[#FF8A8A]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+          </div>
+          <p className="font-light text-xl mt-2">Recibí tu mensaje!</p>
+          <p className="text-gray-600 font-light leading-relaxed">
+            Gracias por ponerte en contacto conmigo. <br />
+            Voy a intentar responderte lo antes posible!
+          </p>
+          {daysRemaining > 0 && (
+            <p className="text-sm text-gray-400">
+              Podrás enviar otro mensaje en {daysRemaining} día{daysRemaining > 1 ? 's' : ''}
+            </p>
+          )}
+        </div>
+      );
     }
-  };
 
-  const getMessage = () => {
-    switch (status) {
-      case 'success':
-        return CONTACT_FORM_CONSTANTS.form.messages.success;
-      case 'error':
-        return CONTACT_FORM_CONSTANTS.form.messages.error;
-      case 'blocked':
-        return CONTACT_FORM_CONSTANTS.form.messages.blocked;
-      default:
-        return null;
-    }
-  };
-
-  const getMessageStyles = () => {
-    switch (status) {
-      case 'success':
-        return 'text-green-600 text-sm text-center font-medium';
-      case 'error':
-        return 'text-red-600 text-sm text-center font-medium';
-      case 'blocked':
-        return 'text-[#FF8A8A] text-sm text-center font-medium';
-      default:
-        return '';
-    }
-  };
-
-  return (
-    <div className={`bg-white p-10 md:p-16 rounded-[4rem] drop-shadow-2xl drop-shadow-black/5 border-t border-gray-100 ${className}`}>
+    // Formulario normal (idle, sending, error)
+    return (
       <form onSubmit={handleSubmit} className="space-y-8">
         <div className="relative">
           <input
@@ -189,11 +154,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
             value={formData.name}
             onChange={handleChange}
             required
-            disabled={isBlocked}
+            disabled={status === 'sending'}
             className={`w-full bg-transparent border-b border-gray-100 focus:border-[#FF8A8A] py-4 outline-none transition-all font-light text-lg ${
-              isBlocked ? 'opacity-50 cursor-not-allowed' : ''
+              status === 'sending' ? 'opacity-50 cursor-not-allowed' : ''
             }`}
-            placeholder={CONTACT_FORM_CONSTANTS.form.placeholders.name}
+            placeholder="Tu nombre"
           />
         </div>
 
@@ -204,11 +169,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
             value={formData.email}
             onChange={handleChange}
             required
-            disabled={isBlocked}
+            disabled={status === 'sending'}
             className={`w-full bg-transparent border-b border-gray-100 focus:border-[#FF8A8A] py-4 outline-none transition-all font-light text-lg ${
-              isBlocked ? 'opacity-50 cursor-not-allowed' : ''
+              status === 'sending' ? 'opacity-50 cursor-not-allowed' : ''
             }`}
-            placeholder={CONTACT_FORM_CONSTANTS.form.placeholders.email}
+            placeholder="Tu email"
           />
         </div>
 
@@ -218,35 +183,42 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
             value={formData.message}
             onChange={handleChange}
             required
-            disabled={isBlocked}
+            disabled={status === 'sending'}
             rows={3}
             className={`w-full bg-transparent border-b border-gray-100 focus:border-[#FF8A8A] py-4 outline-none transition-all font-light text-lg resize-none ${
-              isBlocked ? 'opacity-50 cursor-not-allowed' : ''
+              status === 'sending' ? 'opacity-50 cursor-not-allowed' : ''
             }`}
-            placeholder={CONTACT_FORM_CONSTANTS.form.placeholders.message}
+            placeholder="¿Cómo puedo ayudarte?"
           ></textarea>
         </div>
 
-        {/* Mensajes de estado */}
-        {getMessage() && (
-          <div className={getMessageStyles()}>
-            {getMessage()}
-            {status === 'blocked' && daysRemaining > 0 && (
-              <div className="text-xs mt-2 opacity-75">
-                Podrás enviar otro mensaje en {daysRemaining} día{daysRemaining > 1 ? 's' : ''}
-              </div>
-            )}
+        {/* Mensaje de error */}
+        {status === 'error' && (
+          <div className="text-red-600 text-sm text-center font-medium">
+            Hubo un error al enviar el mensaje. Por favor intenta de nuevo.
           </div>
         )}
 
         <button
           type="submit"
-          disabled={status === 'sending' || isBlocked}
-          className={getButtonStyles()}
+          disabled={status === 'sending'}
+          className={`w-full text-[11px] uppercase tracking-[0.3em] font-bold py-6 rounded-3xl transition-all transform shadow-lg ${
+            status === 'sending'
+              ? 'bg-gray-400 text-white cursor-not-allowed'
+              : 'bg-black text-white hover:bg-[#FF8A8A] hover:-translate-y-1 active:scale-95 shadow-black/10'
+          }`}
         >
-          {getButtonText()}
+          {status === 'sending' ? 'Enviando...' : 'Enviar Mensaje'}
         </button>
       </form>
+    );
+  };
+
+  return (
+    <div
+      className={`bg-white p-10 md:p-16 rounded-[4rem] drop-shadow-2xl drop-shadow-black/5 border-t border-gray-100 ${className}`}
+    >
+      {renderContent()}
     </div>
   );
 };
