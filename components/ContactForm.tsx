@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import {emailJsConfig} from '../configs/emailJS'
-
-
-
+import { emailJsConfig } from '../configs/emailJS';
 
 const CONTACT_FORM_CONSTANTS = {
   // EmailJS config
@@ -29,7 +26,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
   const [isBlocked, setIsBlocked] = useState(false);
   const [daysRemaining, setDaysRemaining] = useState(0);
 
-  // Verificar si el usuario puede enviar un email
+  // check if the user is able to send an email
   useEffect(() => {
     const checkEmailLimit = () => {
       const lastEmailDate = localStorage.getItem(CONTACT_FORM_CONSTANTS.rateLimiting.localStorageKey);
@@ -75,14 +72,15 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
         CONTACT_FORM_CONSTANTS.emailJS.serviceID,
         CONTACT_FORM_CONSTANTS.emailJS.templateID,
         {
+          from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
-          time: (new Date()).toLocaleString()
+          time: new Date().toLocaleString(),
         },
         CONTACT_FORM_CONSTANTS.emailJS.publicKey,
       );
 
-      // Guardar la fecha del último email enviado
+      // Save the date the last email was sent.
       const currentDate = new Date().toISOString();
       localStorage.setItem(CONTACT_FORM_CONSTANTS.rateLimiting.localStorageKey, currentDate);
 
