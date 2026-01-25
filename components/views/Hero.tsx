@@ -3,7 +3,7 @@ import Logo from '../Logo';
 
 const Hero: React.FC = () => {
   return (
-    <section id="inicio" className="min-h-screen flex items-center relative pt-16 pb-8 md:pt-28 md:pb-12">
+    <section id="inicio" className="min-h-screen flex items-center relative pt-16 md:pt-28 mb-3">
       {/* Organic Blobs */}
       <div className="absolute top-20 right-[5%] w-56 sm:w-64 md:w-80 h-56 sm:h-64 md:h-80 bg-[#FFDADA] rounded-full bg-blob" />
       <div className="absolute bottom-10 left-[5%] w-44 sm:w-52 md:w-72 h-44 sm:h-52 md:h-72 bg-[#E0F2F1] rounded-full bg-blob" />

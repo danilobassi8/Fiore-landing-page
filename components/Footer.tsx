@@ -3,9 +3,9 @@ import { CONSTANTS } from '../configs/constants';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white pt-10 pb-8">
+    <footer className="bg-black text-white pt-10 pb-2">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-8 mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-8 mb-3">
           <div className="text-3xl elegant-font mb-6 md:mb-0">
             FP
             <span className="text-[10px] uppercase tracking-[0.3em] font-light font-serif text-gray-300 ps-2 pt-2.5">
@@ -44,13 +44,6 @@ const Footer: React.FC = () => {
               <span className="text-sm opacity-70 group-hover:opacity-100 transition-opacity">WhatsApp</span>
             </a>
           </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="text-center">
-          <p className="text-xs text-white/30 font-light">
-            © {new Date().getFullYear()} FP Psicología. Todos los derechos reservados.
-          </p>
         </div>
       </div>
     </footer>

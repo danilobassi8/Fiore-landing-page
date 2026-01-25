@@ -5,9 +5,6 @@ import { CONSTANTS } from '../../configs/constants';
 const Contact: React.FC = () => {
   return (
     <section id="contacto" className="mb-16 bg-[#FFFAFA] relative">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-[#E0F2F1] rounded-l-[10rem] z-0 opacity-20"></div>
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20">
           <div className="flex flex-col justify-start pt-10">

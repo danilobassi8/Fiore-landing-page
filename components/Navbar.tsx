@@ -17,10 +17,10 @@ const Navbar: React.FC = () => {
     <>
       <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-lg py-3 shadow-sm' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="flex items-baseline space-x-1">
-            <span className="text-3xl elegant-font font-semibold tracking-tighter">F.<span className="text-[#FF8A8A]">P</span></span>
+          <a className="flex items-baseline space-x-1 select-none hover:cursor-pointer" href="#inicio">
+            <span className="text-3xl elegant-font font-semibold tracking-tighter">F <span className="text-[#FF8A8A]">P</span></span>
             <span className="text-[10px] uppercase tracking-[0.3em] font-light text-gray-600 pt-2.5">Psicología</span>
-          </div>
+          </a>
 
           <div className="hidden lg:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium items-center">
             <a href="#inicio" className="hover:text-[#FF8A8A] transition-colors">Inicio</a>
