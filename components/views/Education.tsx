@@ -35,7 +35,7 @@ const Education: React.FC = () => {
   return (
     <section
       id="educacion"
-      className="py-20 md:pt-20 bg-linear-to-br from-[#FFFAFA] to-[#FFF9F9] relative overflow-hidden"
+      className="md:pt-20 bg-linear-to-br from-[#FFFAFA] to-[#FFF9F9] relative overflow-hidden"
     >
       {/* Decorative background elements - Minimal and elegant */}
 

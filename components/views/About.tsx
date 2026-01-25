@@ -3,7 +3,7 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <section id="sobre-mi" className="py-32 bg-white rounded-t-[5rem] -mt-10 relative z-20">
+    <section id="sobre-mi" className="py-10 md:py-32 bg-white rounded-t-[5rem] -mt-10 relative z-20">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <div className="relative">

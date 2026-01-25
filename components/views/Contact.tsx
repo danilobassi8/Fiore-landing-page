@@ -1,17 +1,6 @@
 import React from 'react';
 import ContactForm from '../ContactForm';
-
-const CONSTANTS = {
-  email: 'ps.fiorellabpedros@gmail.com',
-  whatsapp: {
-    number: '3468 411130',
-    url: 'https://wa.me/5493468411130',
-  },
-  location: {
-    text: 'Consultorio Rosario, SF',
-    url: 'https://maps.google.com/?q=Consultorio+Psicológico+Rosario+Santa+Fe',
-  },
-};
+import { CONSTANTS } from '../../configs/constants';
 
 const Contact: React.FC = () => {
   return (
@@ -43,7 +32,7 @@ const Contact: React.FC = () => {
                   <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Correo</p>
                   <a
                     href={`mailto:${CONSTANTS.email}`}
-                    className="text-xl font-light hover:text-[#FF8A8A] transition-colors"
+                    className="text-md md:text-xl font-light hover:text-[#FF8A8A] transition-colors"
                   >
                     {CONSTANTS.email}
                   </a>
@@ -67,7 +56,7 @@ const Contact: React.FC = () => {
                     href={CONSTANTS.location.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl font-light hover:text-[#FF8A8A] transition-colors"
+                    className="text-md md:text-xl font-light hover:text-[#FF8A8A] transition-colors"
                   >
                     {CONSTANTS.location.text}
                   </a>
@@ -86,7 +75,7 @@ const Contact: React.FC = () => {
                     href={CONSTANTS.whatsapp.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xl font-light hover:text-[#FF8A8A] transition-colors"
+                    className="text-md md:text-xl font-light hover:text-[#FF8A8A] transition-colors"
                   >
                     {CONSTANTS.whatsapp.number}
                   </a>
