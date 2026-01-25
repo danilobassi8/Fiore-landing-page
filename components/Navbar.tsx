@@ -21,8 +21,8 @@ const Navbar: React.FC = () => {
             <span className="text-3xl elegant-font font-semibold tracking-tighter">F.<span className="text-[#FF8A8A]">P</span></span>
             <span className="text-[10px] uppercase tracking-[0.3em] font-light text-gray-400">Psicología</span>
           </div>
-          
-          <div className="hidden md:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium items-center">
+
+          <div className="hidden lg:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium items-center">
             <a href="#inicio" className="hover:text-[#FF8A8A] transition-colors">Inicio</a>
             <a href="#sobre-mi" className="hover:text-[#FF8A8A] transition-colors">Sobre Mí</a>
             <a href="#experiencia" className="hover:text-[#FF8A8A] transition-colors">Trayectoria</a>
@@ -30,18 +30,18 @@ const Navbar: React.FC = () => {
             <a href="#contacto" className="text-white bg-black px-6 py-2 rounded-full hover:bg-[#FF8A8A] transition-all">Contacto</a>
           </div>
 
-          <button 
+          <button
             onClick={toggleMenu}
-            className="md:hidden text-xs uppercase tracking-widest font-bold border-b border-black py-1"
+            className="lg:hidden text-xs uppercase tracking-widest font-bold border-b border-black py-1"
           >
-            {isMenuOpen ? 'Cerrar' : 'Menú'}
+            Menu
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 z-[60] bg-white transition-transform duration-500 flex flex-col justify-center items-center ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <button 
+        <button
           onClick={toggleMenu}
           className="absolute top-8 right-6 text-xs uppercase tracking-widest font-bold border-b border-black"
         >
