@@ -4,7 +4,7 @@ import { CONSTANTS } from '../../configs/constants';
 
 const Contact: React.FC = () => {
   return (
-    <section id="contacto" className="py-32 bg-[#FFFAFA] relative overflow-hidden">
+    <section id="contacto" className="mb-16 bg-[#FFFAFA] relative">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[#E0F2F1] rounded-l-[10rem] z-0 opacity-20"></div>
 

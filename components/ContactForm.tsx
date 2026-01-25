@@ -214,7 +214,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
 
   return (
     <div
-      className={`bg-white p-10 md:p-16 rounded-[4rem] drop-shadow-2xl drop-shadow-black/5 border-t border-gray-100 ${className}`}
+      className={`bg-white p-10 md:p-16 rounded-[4rem] drop-shadow-2xl drop-shadow-black/5 border-t border-x border-gray-100 ${className}`}
     >
       {renderContent()}
     </div>

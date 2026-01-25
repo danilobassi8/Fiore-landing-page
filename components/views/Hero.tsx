@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from '../Logo';
 
 const Hero: React.FC = () => {
   return (
@@ -45,16 +46,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           {/* Columna logo */}
-          <div className="flex justify-center lg:justify-end lg:pe-10 scale-[0.3] sm:scale-[0.4] md:scale-100 -my-12 sm:-my-8 md:my-0">
-            <div className="relative group">
-              <div className="text-[15rem] lg:text-[25rem] elegant-font leading-none text-black select-none flex items-center transition-gentle group-hover:scale-105">
-                <span className="z-10">F</span>
-                <span className="text-[#FF8A8A] italic font-light absolute top-10 lg:top-20 -right-8 lg:-right-16 opacity-90 drop-shadow-sm">
-                  P
-                </span>
-              </div>
-            </div>
-          </div>
+          <Logo />
         </div>
       </div>
     </section>

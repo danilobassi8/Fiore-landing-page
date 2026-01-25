@@ -7,7 +7,10 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-8 mb-8">
           <div className="text-3xl elegant-font mb-6 md:mb-0">
-            FP<span className="text-xs ml-3 font-light tracking-[0.4em] uppercase opacity-50">Psicología</span>
+            FP
+            <span className="text-[10px] uppercase tracking-[0.3em] font-light font-serif text-gray-300 ps-2 pt-2.5">
+              <b>Psicología</b>
+            </span>
           </div>
 
           <div className="flex items-center space-x-8">

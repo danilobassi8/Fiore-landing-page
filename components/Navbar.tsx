@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-baseline space-x-1">
             <span className="text-3xl elegant-font font-semibold tracking-tighter">F.<span className="text-[#FF8A8A]">P</span></span>
-            <span className="text-[10px] uppercase tracking-[0.3em] font-light text-gray-400">Psicología</span>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-light text-gray-600 pt-2.5">Psicología</span>
           </div>
 
           <div className="hidden lg:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium items-center">
