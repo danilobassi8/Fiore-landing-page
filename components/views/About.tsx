@@ -3,7 +3,7 @@ import AboutSVG from '../about-svg';
 
 const About: React.FC = () => {
   return (
-    <section id="sobre-mi" className="mt-10 md:mt-0 py-10 md:py-32 bg-white rounded-t-[5rem] relative z-20">
+    <section id="sobre-mi" className="bg-white rounded-t-[5rem] relative z-20 min-h-dvh items-center flex">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <div className="relative">
