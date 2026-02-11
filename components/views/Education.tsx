@@ -22,7 +22,7 @@ const StudyCard: React.FC<{
 
 const Education: React.FC = () => {
   return (
-    <section id="educacion" className="bg-[#FFF9F9] relative min-h-dvh flex items-center">
+    <section id="educacion" className="bg-[#FFF9F9] relative min-h-dvh flex items-center pt-10 md:pt-0">
       {/* Organic Blobs - Consistent with other sections */}
       <div className="absolute top-[15%] right-[8%] w-64 h-64 md:w-80 md:h-80 bg-[#E0F2F1] rounded-full bg-blob" />
       <div className="absolute bottom-[20%] left-[5%] w-48 h-48 md:w-64 md:h-64 bg-[#FFDADA] rounded-full bg-blob" />
