@@ -5,9 +5,9 @@ interface LogoProps {
   customSize?: string;
   hoverable?: boolean;
   className?: string;
-  pColor?: string; // Color para la letra P
-  fColor?: string; // Color para la letra F
-  spacing?: number; // Separación en rem entre F y P
+  pColor?: string; // Letter P Color
+  fColor?: string; // Letter F color
+  spacing?: number; // Separation between F and P
 }
 
 const Logo: React.FC<LogoProps> = ({
@@ -19,7 +19,7 @@ const Logo: React.FC<LogoProps> = ({
   fColor = '#000000',
   spacing = 0
 }) => {
-  // Configuración de tamaños predefinidos
+  // Default size configuration
   const sizeConfig = {
     small: {
       container: 'scale-[0.3] -my-12',
