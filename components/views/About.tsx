@@ -7,7 +7,7 @@ const About: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
           <div className="relative">
-            <div className="w-full h-[400px] md:h-[500px] flex items-center justify-center bg-gradient-to-br from-[#FFDADA]/20 to-[#E0F2F1]/20">
+            <div className="w-full flex items-center justify-center">
               <AboutSVG className="w-full h-full object-cover group" />
             </div>
 
