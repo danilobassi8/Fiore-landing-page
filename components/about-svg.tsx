@@ -6,7 +6,7 @@ const SVGComponent = (props) => (
     width={300}
     height={200}
     {...props}
-    className={props.className + ' group'}
+    className={props.className + ' '}
   >
     <defs>
       <clipPath clipPathUnits="userSpaceOnUse" id="cp1">

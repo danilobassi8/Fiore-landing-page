@@ -6,7 +6,7 @@ const About: React.FC = () => {
     <section id="sobre-mi" className="bg-white rounded-t-[5rem] relative z-20 min-h-dvh items-center flex">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-          <div className="relative">
+          <div className="relative md:h-full flex items-center group">
             <div className="w-full flex items-center justify-center">
               <AboutSVG className="w-full h-full object-cover group" />
             </div>
@@ -16,9 +16,9 @@ const About: React.FC = () => {
 
           <div>
             <h2 className="text-[10px] uppercase tracking-[0.5em] text-[#FF8A8A] font-bold mb-6">
-              La perspectiva humana
+              Fiorella B. Pedrós
             </h2>
-            <h3 className="text-5xl md:text-6xl elegant-font mb-8 italic">Cercanía y profesionalismo</h3>
+            <h3 className="text-5xl md:text-6xl elegant-font mb-8 italic">Sobre mí</h3>
             <div className="space-y-6 text-gray-600 font-light text-lg leading-relaxed">
               <p>
                 Mi formación y experiencia clínica se orientan al trabajo con niños, niñas, adolescentes y adultos,

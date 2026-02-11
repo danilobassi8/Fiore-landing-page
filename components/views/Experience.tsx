@@ -31,16 +31,10 @@ const ExperienceCard: React.FC<{
 
 const Experience: React.FC = () => {
   return (
-    <section id="experiencia" className="py-10 md:py-32 bg-white">
+    <section id="experiencia" className="min-h-dvh bg-linear-to-b from-[#FFF] to-[#fcfcfc] flex items-center">
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="text-center max-w-4xl mx-auto mb-10 md:mb-24">
-          <span className="inline-block px-4 py-2 bg-[#FFDADA]/10 border border-[#FFDADA] rounded-full mb-6">
-            <span className="text-[10px] uppercase tracking-[0.4em] font-semibold text-[#FF8A8A]">
-              Trayectoria Profesional
-            </span>
-          </span>
-
           <h2 className="text-4xl md:text-6xl lg:text-7xl elegant-font font-light leading-tight mb-6">
             Experiencia <span className="italic text-[#FF8A8A]">profesional</span>
           </h2>

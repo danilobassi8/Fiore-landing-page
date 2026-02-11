@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
               <div className="flex justify-center md:justify-start mb-4 sm:mb-6">
                 <div className="px-4 py-1 bg-white border border-[#FFDADA] rounded-full">
                   <span className="text-[10px] uppercase tracking-[0.4em] font-semibold text-[#FF8A8A]">
-                    Psicologia integral
+                    Psicología integral
                   </span>
                 </div>
               </div>
