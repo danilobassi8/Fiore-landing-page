@@ -21,27 +21,23 @@ const About: React.FC = () => {
             <h3 className="text-5xl md:text-6xl elegant-font mb-8 italic">Cercanía y profesionalismo</h3>
             <div className="space-y-6 text-gray-600 font-light text-lg leading-relaxed">
               <p>
-                Como psicóloga de una nueva generación, entiendo los desafíos actuales desde una mirada fresca y
-                empática. Mi formación me permite conectar tanto con el juego espontáneo de los{' '}
-                <span className="text-black font-medium underline decoration-[#FFDADA] decoration-4">niños</span> como
-                con la complejidad de los procesos{' '}
-                <span className="text-black font-medium underline decoration-[#E0F2F1] decoration-4">adultos</span>.
+                Mi formación y experiencia clínica se orientan al trabajo con niños, niñas, adolescentes y adultos,
+                acompañando procesos terapéuticos desde una escucha atenta y respetuosa de cada historia.
               </p>
               <p>
-                Licenciada en Psicología, graduada con pasión y dedicada a construir puentes hacia la salud emocional a
-                través de métodos actualizados y un trato profundamente humano.
+                En el abordaje con infancias y adolescencias, mi mirada se centra en el contexto, los tiempos y la etapa
+                de crecimiento de cada persona. El trabajo con las familias y la orientación a padres forman parte
+                fundamental del proceso terapéutico.
               </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-10 mt-12 pt-10 border-t border-gray-100">
-              <div>
-                <span className="block text-4xl elegant-font italic mb-1">Kids & Teens</span>
-                <span className="text-[9px] uppercase tracking-widest text-gray-400">Especialidad</span>
-              </div>
-              <div>
-                <span className="block text-4xl elegant-font italic mb-1">Adultos</span>
-                <span className="text-[9px] uppercase tracking-widest text-gray-400">Atención Clínica</span>
-              </div>
+              <p>
+                Cuento además con formación en psicología aplicada al deporte, que brinda una mirada integral sobre el
+                vínculo entre juego, disciplina, emoción, cuerpo y subjetividad, ofreciendo un espacio de acompañamiento
+                para deportistas.
+              </p>
+              <p>
+                Mi enfoque integra cercanía, profesionalismo y una escucha sensible a los tiempos y procesos de cada
+                persona.
+              </p>
             </div>
           </div>
         </div>
