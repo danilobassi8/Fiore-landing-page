@@ -6,10 +6,15 @@ const Footer: React.FC = () => {
     <footer className="bg-black text-white pt-10 pb-2">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-8 mb-3">
-          <div className="text-3xl elegant-font mb-6 md:mb-0">
-            FP
-            <span className="text-[10px] uppercase tracking-[0.3em] font-light font-serif text-gray-300 ps-2 pt-2.5">
-              <b>Psicología</b>
+          <div className="text-4xl elegant-font mb-6 md:mb-0 flex items-center gap-2">
+            <span>FP</span>
+            <span className="text-[10px] h-full tracking-[0.3em] font-sans border-l border-gray-300 ps-2 text-gray-300">
+              <div className="inline-flex flex-col justify-center h-full">
+                <p>
+                  <b>PSICOLOGÍA</b>
+                </p>
+                <p>MAT. 16090</p>
+              </div>
             </span>
           </div>
 
