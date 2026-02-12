@@ -3,7 +3,10 @@ import Card from '../Card';
 
 const Experience: React.FC = () => {
   return (
-    <section id="experiencia" className="min-h-dvh bg-linear-to-b from-[#FFF] to-[#fcfcfc] flex items-center pt-30 md:pt-20">
+    <section
+      id="experiencia"
+      className="min-h-dvh bg-linear-to-b from-[#FFF] to-[#fcfcfc] flex items-center pt-30 md:pt-20"
+    >
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="text-center max-w-4xl mx-auto mb-10 md:mb-24">
@@ -20,30 +23,22 @@ const Experience: React.FC = () => {
         {/* Experience Grid */}
         <div className="flex flex-col lg:flex-row mb-20 gap-8 lg:gap-20">
           {/* Consultorio Particular */}
-          <Card
-            title="Consultorio Particular"
-            period="2021 — Actualidad"
-            subtitle="Rosario, Argentina"
-          >
-            Atención psicológica integral especializada en niños, adolescentes y adultos. Enfoque terapéutico humanístico con técnicas modernas adaptadas a cada etapa del desarrollo.
+          <Card title="Consultorio Particular" period="2022 — Actualidad" subtitle="Atención virtual y presencial">
+            Atención psicológica a niños, adolescentes y adultos, con orientación psicoanalítica. Un espacio de escucha,
+            presencia y acompañamiento, donde cada historia encuentra su tiempo y modo singular de ser elaborada.
           </Card>
 
           {/* Equipos Multidisciplinarios */}
-          <Card
-            title="Equipos Multidisciplinarios"
-            period="2021 — 2024"
-            subtitle="Centros de Salud"
-          >
-            Trabajo colaborativo en red con profesionales de diversas disciplinas. Intervenciones coordinadas para el bienestar integral y abordaje biopsicosocial.
+          <Card title="Equipos Interdiciplinarios" period="2021 — 2025" subtitle="Centros de Salud">
+            Práctica profesional en Centro Educativo Asistencial, con profesionales de diversas áreas para el abordaje
+            de la clínica con niños. Trabajo en equipo interdisciplinario orientado a la inclusión escolar y al
+            acompañamiento de niños con discapacidad.
           </Card>
 
           {/* Docencia Universitaria */}
-          <Card
-            title="Docencia Universitaria"
-            period="2016 — 2024"
-            subtitle="Instituto Italiano - Rosario"
-          >
-            Docente titular en las cátedras de Psicoanálisis II y Psicométricas Proyectivas. Formación académica integrando teoría psicoanalítica con práctica clínica contemporánea.
+          <Card title="Docencia Universitaria" period="2022 — 2025" subtitle="Instituto Italiano - Rosario">
+            Adscripta y posteriormente Jefa de Trabajos Prácticos en las cátedras de Psicopatología y Técnicas
+            Psicométricas y Proyectivas I y II. Tribunal en defensa de tesis y supervisión en desarrollo y escritura de tesis.
           </Card>
         </div>
       </div>
