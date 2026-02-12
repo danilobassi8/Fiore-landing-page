@@ -1,23 +1,58 @@
 @import 'tailwindcss';
 
+/* Fix para escalado del sistema - Normaliza la experiencia visual */
+html {
+  /* Fuerza un font-size base consistente independiente del escalado del sistema */
+  font-size: 16px !important;
+  /* Previene el zoom automático en mobile */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Mejora el renderizado de texto */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Asegura que el body mantenga proporciones consistentes */
 body {
   font-family: 'Montserrat', sans-serif;
+  /* Fuerza line-height consistente */
+  line-height: 1.5;
+  /* Previene el overflow horizontal que puede causar problemas de escalado */
+  overflow-x: hidden;
 }
+
 h1,
 h2,
 h3,
 .elegant-font {
   font-family: 'Cormorant Garamond', serif;
 }
+
 .bg-blob {
   filter: blur(80px);
   opacity: 0.4;
   z-index: -1;
 }
+
 .transition-gentle {
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 ::selection {
   background: #ffdada;
   color: #000;
+}
+
+/* Media queries para controlar mejor el escalado en diferentes resoluciones */
+@media screen and (min-width: 1920px) {
+  html {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 14px !important;
+  }
 }

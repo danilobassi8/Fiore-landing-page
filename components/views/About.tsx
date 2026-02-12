@@ -5,7 +5,7 @@ const About: React.FC = () => {
   return (
     <section id="sobre-mi" className="bg-white rounded-t-[5rem] relative z-20 min-h-dvh items-center flex">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative md:h-full flex items-center group">
             <div className="w-full flex items-center justify-center">
               <AboutSVG className="w-full h-full object-cover group" />

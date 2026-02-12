@@ -3,7 +3,7 @@ import Card from '../Card';
 
 const Experience: React.FC = () => {
   return (
-    <section id="experiencia" className="min-h-dvh bg-linear-to-b from-[#FFF] to-[#fcfcfc] flex items-center pt-30 md:pt-0">
+    <section id="experiencia" className="min-h-dvh bg-linear-to-b from-[#FFF] to-[#fcfcfc] flex items-center pt-30 md:pt-20">
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="text-center max-w-4xl mx-auto mb-10 md:mb-24">

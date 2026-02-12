@@ -131,7 +131,7 @@ const SVGComponent = (props) => (
         <g>
           <g
             id="Conversation"
-            className="group-hover:scale-105 group-hover:-translate-x-2 group-hover:-translate-y-1 group-active:scale-105 group-active:-translate-x-2 group-active:-translate-y-1 transition-transform duration-800 ease-in-out"
+            className="group-hover:scale-105 group-hover:-translate-x-2 group-hover:-translate-y-1 group-active:scale-105 group-active:-translate-x-2 group-active:-translate-y-1 transition-transform duration-900 ease-in-out"
           >
             <path
               className="s32"
@@ -1095,7 +1095,7 @@ const SVGComponent = (props) => (
 
           <g
             id="Fiore"
-            className="group-hover:scale-110 group-hover:-translate-y-2 group-hover:-translate-x-4 group-active:scale-110 group-active:-translate-y-2 group-active:-translate-x-4 transition-transform duration-500 ease-in-out"
+            className="group-hover:scale-110 group-hover:-translate-y-2 group-hover:-translate-x-5 group-active:scale-110 group-active:-translate-y-2 group-active:-translate-x-4 transition-transform duration-500 ease-in-out"
           >
             <path
               className="s1"
