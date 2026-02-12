@@ -22,23 +22,21 @@ const Experience: React.FC = () => {
 
         {/* Experience Grid */}
         <div className="flex flex-col lg:flex-row mb-20 gap-8 lg:gap-20">
-          {/* Consultorio Particular */}
           <Card title="Consultorio Particular" period="2022 — Actualidad" subtitle="Atención virtual y presencial">
             Atención psicológica a niños, adolescentes y adultos, con orientación psicoanalítica. Un espacio de escucha,
             presencia y acompañamiento, donde cada historia encuentra su tiempo y modo singular de ser elaborada.
           </Card>
 
-          {/* Equipos Multidisciplinarios */}
           <Card title="Equipos Interdiciplinarios" period="2021 — 2025" subtitle="Centros de Salud">
             Práctica profesional en Centro Educativo Asistencial, con profesionales de diversas áreas para el abordaje
             de la clínica con niños. Trabajo en equipo interdisciplinario orientado a la inclusión escolar y al
             acompañamiento de niños con discapacidad.
           </Card>
 
-          {/* Docencia Universitaria */}
           <Card title="Docencia Universitaria" period="2022 — 2025" subtitle="Instituto Italiano - Rosario">
             Adscripta y posteriormente Jefa de Trabajos Prácticos en las cátedras de Psicopatología y Técnicas
-            Psicométricas y Proyectivas I y II. Tribunal en defensa de tesis y supervisión en desarrollo y escritura de tesis.
+            Psicométricas y Proyectivas I y II. Tribunal en defensa de tesis y supervisión en desarrollo y escritura de
+            tesis.
           </Card>
         </div>
       </div>

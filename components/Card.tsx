@@ -13,7 +13,9 @@ const Card: React.FC<CardProps> = ({ title, period, subtitle, children }) => {
       {/* Period indicator */}
       {period && (
         <div className="flex items-center justify-between mb-6">
-          <span className="text-[10px] uppercase tracking-[0.4em] font-semibold text-[#FF8A8A] mb-2 block">{period}</span>
+          <span className="text-[10px] uppercase tracking-[0.4em] font-semibold text-[#FF8A8A] mb-2 block">
+            {period}
+          </span>
         </div>
       )}
 
@@ -27,9 +29,7 @@ const Card: React.FC<CardProps> = ({ title, period, subtitle, children }) => {
           </div>
         )}
 
-        <div className="text-gray-500 font-light leading-relaxed text-sm md:text-base">
-          {children}
-        </div>
+        <div className="text-gray-500 font-light leading-relaxed text-sm md:text-base">{children}</div>
       </div>
     </div>
   );

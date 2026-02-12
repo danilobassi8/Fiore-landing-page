@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
       <div className="absolute top-20 right-[5%] w-56 sm:w-64 md:w-80 h-56 sm:h-64 md:h-80 bg-[#FFDADA] rounded-full bg-blob" />
       <div className="absolute bottom-10 left-[5%] w-44 sm:w-52 md:w-72 h-44 sm:h-52 md:h-72 bg-[#E0F2F1] rounded-full bg-blob" />
 
-      {/* Contenedor principal */}
+
       <div className="container mx-auto px-6 min-h-dvh flex items-center justify-center">
         <div className="w-full max-w-2xl md:max-w-7xl min-h-dvh flex flex-col md:flex-row justify-between md:items-center py-12 md:gap-20">
           {/* Columna logo - Mobile: 33% | Desktop: Lado derecho */}
@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
             <Logo />
           </div>
 
-          {/* Columna texto - Mobile: Centro | Desktop: Lado izquierdo */}
+
           <div className="flex-1 md:order-1 flex flex-col justify-center text-center md:text-left md:max-w-2xl">
             <div>
               <div className="flex justify-center md:justify-start mb-4 sm:mb-6">
@@ -38,7 +38,7 @@ const Hero: React.FC = () => {
                 cada historia.
               </p>
 
-              {/* Botones - Mobile: Abajo del todo | Desktop: Debajo del texto */}
+              {/* Buttons for desktop */}
               <div className="hidden md:block">
                 <div className="flex flex-col md:flex-row items-center gap-3 sm:gap-4 md:gap-6">
                   <a
@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Botones solo para mobile - Abajo del todo */}
+          {/* Buttons for mobile */}
           <div className="flex-1 md:hidden flex flex-col justify-end">
             <div className="flex flex-col items-center justify-center gap-3 sm:gap-4">
               <a

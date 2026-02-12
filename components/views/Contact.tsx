@@ -10,7 +10,8 @@ const Contact: React.FC = () => {
           <div className="flex flex-col justify-start pt-10">
             <h3 className="text-5xl md:text-7xl elegant-font mb-4">¿Hablamos?</h3>
             <p className="text-gray-500 font-light text-lg mb-10 leading-relaxed">
-              Podés solicitar turno tanto <span className="text-black font-medium">virtual</span> como <span className="text-black font-medium">presencial</span>
+              Podés solicitar turno tanto <span className="text-black font-medium">virtual</span> como{' '}
+              <span className="text-black font-medium">presencial</span>
             </p>
 
             <div className="space-y-10">
@@ -81,7 +82,6 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Formulario de contacto */}
           <ContactForm />
         </div>
       </div>
