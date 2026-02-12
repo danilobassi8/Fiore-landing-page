@@ -6,11 +6,11 @@ const Footer: React.FC = () => {
     <footer className="bg-black text-white pt-10 pb-2">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center border-b border-white/10 pb-8 mb-3">
-          <div className="text-4xl elegant-font mb-6 md:mb-0 flex items-center gap-2">
-            <span>FP</span>
-            <span className="text-[10px] h-full tracking-[0.3em] font-sans border-l border-gray-300 ps-2 text-gray-300">
+          <div className="text-4xl  mb-6 md:mb-0 flex items-center gap-2">
+            <span className="elegant-font">FP</span>
+            <span className="text-[11px] mt-1 h-full border-l border-gray-300 ps-2 text-gray-300">
               <div className="inline-flex flex-col justify-center h-full">
-                <p>
+                <p className="font-bold">
                   <b>PSICOLOGÍA</b>
                 </p>
                 <p>MAT. 16090</p>
@@ -49,6 +49,17 @@ const Footer: React.FC = () => {
               <span className="text-sm opacity-70 group-hover:opacity-100 transition-opacity">WhatsApp</span>
             </a>
           </div>
+        </div>
+
+        {/* Developer Credit */}
+        <div className="text-center">
+          <a
+            className="text-xs text-[#3a3535] font-semibold select-all hover:text-white hover:underline-offset-2 hover:underline"
+            href="https://www.linkedin.com/in/danilobassi8/"
+            target="_blank"
+          >
+            por Danilo Bassi
+          </a>
         </div>
       </div>
     </footer>

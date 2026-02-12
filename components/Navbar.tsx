@@ -72,11 +72,21 @@ const Navbar: React.FC = () => {
           <div className="absolute -left-16 top-1/2 w-8 h-px bg-linear-to-r from-transparent to-[#FF8A8A]/30"></div>
           <div className="absolute -right-16 top-1/2 w-8 h-px bg-linear-to-l from-transparent to-[#FF8A8A]/30"></div>
 
-          <a href="#inicio" onClick={toggleMenu}>Inicio</a>
-          <a href="#sobre-mi" onClick={toggleMenu}>Sobre Mí</a>
-          <a href="#experiencia" onClick={toggleMenu}>Trayectoria</a>
-          <a href="#educacion" onClick={toggleMenu}>Educación</a>
-          <a href="#contacto" onClick={toggleMenu}>Contacto</a>
+          <a href="#inicio" onClick={toggleMenu}>
+            Inicio
+          </a>
+          <a href="#sobre-mi" onClick={toggleMenu}>
+            Sobre Mí
+          </a>
+          <a href="#experiencia" onClick={toggleMenu}>
+            Trayectoria
+          </a>
+          <a href="#educacion" onClick={toggleMenu}>
+            Educación
+          </a>
+          <a href="#contacto" onClick={toggleMenu}>
+            Contacto
+          </a>
         </div>
 
         <div className="text-center">
