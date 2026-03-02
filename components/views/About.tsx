@@ -11,7 +11,6 @@ const About: React.FC = () => {
               <AboutSVG className="w-full h-full object-cover group" />
             </div>
 
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#FFF9C4] rounded-full mix-blend-multiply opacity-50 bg-blob"></div>
           </div>
 
           <div>
