@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -13,34 +15,41 @@ const Navbar: React.FC = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const isHome = location.pathname === '/';
+
+  const sectionLink = (hash: string) => (isHome ? hash : `/${hash}`);
+
   return (
     <>
       <nav
         className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-lg py-3 shadow-sm' : 'bg-transparent py-6'}`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <a className="flex items-baseline space-x-1 select-none hover:cursor-pointer" href="#inicio">
+          <Link className="flex items-baseline space-x-1 select-none hover:cursor-pointer" to="/">
             <span className="text-3xl elegant-font font-semibold tracking-tighter">
               F <span className="text-[#FF8A8A]">P</span>
             </span>
             <span className="text-[10px] uppercase tracking-[0.3em] font-light text-gray-600 pt-2.5">Psicología</span>
-          </a>
+          </Link>
 
           <div className="hidden lg:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium items-center">
-            <a href="#inicio" className="hover:text-[#FF8A8A] transition-colors">
+            <a href={sectionLink('#inicio')} className="hover:text-[#FF8A8A] transition-colors">
               Inicio
             </a>
-            <a href="#sobre-mi" className="hover:text-[#FF8A8A] transition-colors">
+            <a href={sectionLink('#sobre-mi')} className="hover:text-[#FF8A8A] transition-colors">
               Sobre Mí
             </a>
-            <a href="#experiencia" className="hover:text-[#FF8A8A] transition-colors">
+            <a href={sectionLink('#experiencia')} className="hover:text-[#FF8A8A] transition-colors">
               Experiencia
             </a>
-            <a href="#educacion" className="hover:text-[#FF8A8A] transition-colors">
+            <a href={sectionLink('#educacion')} className="hover:text-[#FF8A8A] transition-colors">
               Educación
             </a>
+            <Link to="/escritos" className="hover:text-[#FF8A8A] transition-colors">
+              Escritos
+            </Link>
             <a
-              href="#contacto"
+              href={sectionLink('#contacto')}
               className="text-white bg-black px-6 py-2 rounded-full hover:bg-[#FF8A8A] transition-all"
             >
               Contacto
@@ -72,19 +81,22 @@ const Navbar: React.FC = () => {
           <div className="absolute -left-16 top-1/2 w-8 h-px bg-linear-to-r from-transparent to-[#FF8A8A]/30"></div>
           <div className="absolute -right-16 top-1/2 w-8 h-px bg-linear-to-l from-transparent to-[#FF8A8A]/30"></div>
 
-          <a href="#inicio" onClick={toggleMenu}>
+          <a href={sectionLink('#inicio')} onClick={toggleMenu}>
             Inicio
           </a>
-          <a href="#sobre-mi" onClick={toggleMenu}>
+          <a href={sectionLink('#sobre-mi')} onClick={toggleMenu}>
             Sobre Mí
           </a>
-          <a href="#experiencia" onClick={toggleMenu}>
+          <a href={sectionLink('#experiencia')} onClick={toggleMenu}>
             Trayectoria
           </a>
-          <a href="#educacion" onClick={toggleMenu}>
+          <a href={sectionLink('#educacion')} onClick={toggleMenu}>
             Educación
           </a>
-          <a href="#contacto" onClick={toggleMenu}>
+          <Link to="/escritos" onClick={toggleMenu}>
+            Escritos
+          </Link>
+          <a href={sectionLink('#contacto')} onClick={toggleMenu}>
             Contacto
           </a>
         </div>

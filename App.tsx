@@ -1,22 +1,21 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/views/Hero';
-import About from './components/views/About';
-import Experience from './components/views/Experience';
-import Education from './components/views/Education';
-import Contact from './components/views/Contact';
 import Footer from './components/Footer';
+import HomePage from './components/views/HomePage';
+import WritingsIndex from './components/views/WritingsIndex';
+import WritingPage from './components/views/WritingPage';
 
 const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
-        <Hero />
-        <About />
-        <Experience />
-        <Education />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/escritos" element={<WritingsIndex />} />
+          <Route path="/escritos/:slug" element={<WritingPage />} />
+        </Routes>
       </main>
       <Footer />
     </div>
