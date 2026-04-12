@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -17,7 +18,19 @@ const Navbar: React.FC = () => {
 
   const isHome = location.pathname === '/';
 
-  const sectionLink = (hash: string) => (isHome ? hash : `/${hash}`);
+  const scrollToSection = useCallback(
+    (id: string) => {
+      if (isHome) {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    },
+    [isHome, navigate],
+  );
 
   return (
     <>
@@ -33,27 +46,27 @@ const Navbar: React.FC = () => {
           </Link>
 
           <div className="hidden lg:flex space-x-10 text-[11px] uppercase tracking-[0.2em] font-medium items-center">
-            <a href={sectionLink('#inicio')} className="hover:text-[#FF8A8A] transition-colors">
-              Inicio
-            </a>
-            <a href={sectionLink('#sobre-mi')} className="hover:text-[#FF8A8A] transition-colors">
-              Sobre Mí
-            </a>
-            <a href={sectionLink('#experiencia')} className="hover:text-[#FF8A8A] transition-colors">
-              Experiencia
-            </a>
-            <a href={sectionLink('#educacion')} className="hover:text-[#FF8A8A] transition-colors">
-              Educación
-            </a>
-            <Link to="/escritos" className="hover:text-[#FF8A8A] transition-colors">
-              Escritos
+            <button onClick={() => scrollToSection('inicio')} className="hover:text-[#FF8A8A] transition-colors cursor-pointer">
+              INICIO
+            </button>
+            <button onClick={() => scrollToSection('sobre-mi')} className="hover:text-[#FF8A8A] transition-colors cursor-pointer">
+              SOBRE MÍ
+            </button>
+            <button onClick={() => scrollToSection('experiencia')} className="hover:text-[#FF8A8A] transition-colors cursor-pointer">
+              EXPERIENCIA
+            </button>
+            <button onClick={() => scrollToSection('educacion')} className="hover:text-[#FF8A8A] transition-colors cursor-pointer">
+              EDUCACIÓN
+            </button>
+            <Link to="/escritos" className="hover:text-[#FF8A8A] transition-colors cursor-pointer">
+              ESCRITOS
             </Link>
-            <a
-              href={sectionLink('#contacto')}
+            <button
+              onClick={() => scrollToSection('contacto')}
               className="text-white bg-black px-6 py-2 rounded-full hover:bg-[#FF8A8A] transition-all"
             >
               Contacto
-            </a>
+            </button>
           </div>
 
           <button
@@ -76,29 +89,29 @@ const Navbar: React.FC = () => {
           Cerrar
         </button>
 
-        <div className="flex flex-col space-y-8 text-center relative [&>a]:text-4xl [&>a]:elegant-font [&>a]:hover:text-[#FF8A8A]">
+        <div className="flex flex-col space-y-8 text-center relative [&>a]:text-4xl [&>a]:elegant-font [&>a]:hover:text-[#FF8A8A] [&>button]:text-4xl [&>button]:elegant-font [&>button]:hover:text-[#FF8A8A]">
           {/* Subtle line decoration */}
           <div className="absolute -left-16 top-1/2 w-8 h-px bg-linear-to-r from-transparent to-[#FF8A8A]/30"></div>
           <div className="absolute -right-16 top-1/2 w-8 h-px bg-linear-to-l from-transparent to-[#FF8A8A]/30"></div>
 
-          <a href={sectionLink('#inicio')} onClick={toggleMenu}>
+          <button onClick={() => { scrollToSection('inicio'); toggleMenu(); }}>
             Inicio
-          </a>
-          <a href={sectionLink('#sobre-mi')} onClick={toggleMenu}>
+          </button>
+          <button onClick={() => { scrollToSection('sobre-mi'); toggleMenu(); }}>
             Sobre Mí
-          </a>
-          <a href={sectionLink('#experiencia')} onClick={toggleMenu}>
+          </button>
+          <button onClick={() => { scrollToSection('experiencia'); toggleMenu(); }}>
             Trayectoria
-          </a>
-          <a href={sectionLink('#educacion')} onClick={toggleMenu}>
+          </button>
+          <button onClick={() => { scrollToSection('educacion'); toggleMenu(); }}>
             Educación
-          </a>
+          </button>
           <Link to="/escritos" onClick={toggleMenu}>
             Escritos
           </Link>
-          <a href={sectionLink('#contacto')} onClick={toggleMenu}>
+          <button onClick={() => { scrollToSection('contacto'); toggleMenu(); }}>
             Contacto
-          </a>
+          </button>
         </div>
 
         <div className="text-center">
