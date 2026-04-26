@@ -19,6 +19,13 @@ export interface WritingEntry {
 // },
 export const writings: WritingEntry[] = [
   {
+    slug: 'la-espera-desespera',
+    title: 'La espera desespera',
+    description: 'El discurso capitalista y sus efectos.',
+    date: 'Agosto 2024',
+    component: React.lazy(() => import('./EsperaDesespera')),
+  },
+  {
     slug: 'ahora-de-juego',
     title: 'Ahora de juego',
     description: 'Postulados sobre el juego en la clínica psicoanalítica con niños.',
